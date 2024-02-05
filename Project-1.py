@@ -1,4 +1,4 @@
-# Helmer Gomez  2022
+# Helmer Gomez  12/2022
 # This program reads data from Plant Catalog and builds
 # parallel arrays for the plant items,
 # with each array containing the plant's full name, zone, light,
