@@ -6,3 +6,7 @@ The first programming language that I learned was Python. Project 1 is the Final
 ## Project 2
 
 Project 2 simulates the Tower of Hanoi Puzzle with 3 "blocks" (characters  A, B, & C) and uses character vectors. The goal of the game is to get the three letters in alphabetical order into the third row. This was one of the first games that I wrote in my free time in C++. It was initially challenging to remember the C++ syntax as I was used to the Python syntax. This was a very rewarding experience once I was able to run the program without errors. 
+
+## Project 3
+
+Project 3 is the most recent project I have completed. I was asked to give the user the option to choose between displaying custom-created art or to give them the ability to choose the size to display a hot air balloon. If the balloon is a size of five or more, it will display the text UIC, centered vertically and horizontally on the balloon. 
