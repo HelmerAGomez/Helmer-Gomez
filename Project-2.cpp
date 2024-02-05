@@ -1,6 +1,5 @@
 /*
-
-Helmer Gomez			3/13/2023
+Helmer Gomez			3/2023
 
 Tower of Hanoi Puzzle with 4 "blocks" (characters - A, B, C & D) and 3 character vectors T1, T2 & T3
 Prompt the user to enter a source T and a destination T.
