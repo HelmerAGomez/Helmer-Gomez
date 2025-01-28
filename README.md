@@ -10,3 +10,6 @@ Project 2 simulates the Tower of Hanoi Puzzle with 3 "blocks" (characters  A, B,
 ## Project 3
 
 Project 3 is the most recent project I have completed. I was asked to give the user the option to choose between displaying custom-created art or to give them the ability to choose the size to display a hot air balloon. If the balloon is a size of five or more, it will display the text UIC, centered vertically and horizontally on the balloon. 
+
+## Project 4
+Project 4 is my implementation of the Huffman Encoding algorithm. I was tasked with implementing the alogrith to compress files.
