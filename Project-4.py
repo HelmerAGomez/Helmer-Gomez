@@ -3,8 +3,6 @@ class freqNode:
 	def __init__(self, char = None, freq = None):
 		self.char = char
 		self.freq = freq
-		self.parent = None
-		self.code = None
 		self.left = None
 		self.right = None
 	def __lt__(self, other):
@@ -31,39 +29,24 @@ def encodingTree(letterMap):
 		sumNode = leftNode.freq + rightNode.freq
 		newHeadNode = freqNode(None, sumNode)
 		newHeadNode.left = leftNode
-		newHeadNode.left.parent = newHeadNode
 		newHeadNode.right = rightNode
-		newHeadNode.right.parent = newHeadNode
 		heapq.heappush(pq, newHeadNode)
 	treeHead = heapq.heappop(pq)
 	return treeHead
 
-def addingCode(currNode, map, isLeft = True):
+def addingCode(currNode, map, path = ""):
 	if currNode is None:
 		return
-	if currNode.parent is None:
-		addingCode(currNode.left, map)
-		addingCode(currNode.right, map, False)
-	else:
-		if currNode.parent.code is None:
-			if isLeft:
-				currNode.code = "0"
-			else:
-				currNode.code = "1"
-		else:
-			if isLeft:
-				currNode.code = currNode.parent.code + "0" 
-			else:
-				currNode.code = currNode.parent.code + "1"
-		if currNode.char is not None:
-			map[currNode.char] = currNode.code
-		addingCode(currNode.left, map)
-		addingCode(currNode.right, map, False)
+	if currNode.char is not None:
+		map[currNode.char] = path
+	addingCode(currNode.left, map, path + '0')
+	addingCode(currNode.right, map, path + '1')
 
 def encodingMap(treeHead):
 	map = {}
 	addingCode(treeHead, map)
 	return map
+
 def encodingText(encodeMap,filename):
 	codeString = ""
 	contentOfFile = open(filename)
@@ -94,10 +77,7 @@ def decodingText(filename, treeHead):
 	currString = ""
 	for currBit in codeString:
 		currString += currBit
-		if currBit == '1':
-			currNode = currNode.right
-		else:
-			currNode = currNode.left
+		currNode = currNode.right if currBit == '1' else currNode.left
 		if currNode.char is not None:
 			if currNode.char == 'EOF':
 				return
@@ -114,6 +94,5 @@ def main():
 	encodeMap = encodingMap(treeHead) 
 	encodingText(encodeMap, filename)
 	decodingText(codedFilename, treeHead)
-	#print("\n")
 
 main()
