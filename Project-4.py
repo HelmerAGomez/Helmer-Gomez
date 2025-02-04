@@ -13,8 +13,7 @@ def frequencyMap(filename):
 	contentOfFile = open(filename)
 	for line in contentOfFile:
 		for letter in line:
-			letterMap.setdefault(letter, 0)
-			letterMap[letter] += 1
+			letterMap[letter] = 1 + letterMap.get(letter, 0)
 	letterMap['EOF'] = 1 
 	contentOfFile.close()
 	return letterMap
